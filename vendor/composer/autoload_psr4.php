@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'DinoFinder\\\\' => array($baseDir . '/src'),
+    'DinoFinder\\' => array($baseDir . '/src'),
 );
