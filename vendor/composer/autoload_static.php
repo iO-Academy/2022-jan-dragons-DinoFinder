@@ -9,12 +9,12 @@ class ComposerStaticInit157652fd17fc2f0ad11c62d27b975ce8
     public static $prefixLengthsPsr4 = array (
         'D' => 
         array (
-            'DinoFinder\\\\' => 12,
+            'DinoFinder\\' => 11,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'DinoFinder\\\\' => 
+        'DinoFinder\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
