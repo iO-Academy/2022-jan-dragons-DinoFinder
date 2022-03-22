@@ -1,0 +1,63 @@
+$title-font: 'Jurassic Park', sans-serif;
+$body-font: 'DM Sans', sans-serif;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: rgb(251,176,59);
+    background: linear-gradient(0deg, rgba(251,176,59,1) 0%, rgba(229,41,23,1) 100%) no-repeat fixed;
+}
+
+header {
+
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+
+    h1 {
+        font-family: $title-font;
+        font-size: 15rem;
+        letter-spacing: 0.3rem;
+        color: #FFFFFF;
+        font-weight: 100;
+        text-align: center;
+        margin: 20px;
+        white-space: nowrap;
+    }
+}
+
+.dinoGrid {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5%;
+    justify-content: space-evenly;
+
+        .dinoCard {
+            width: 300px;
+        }
+}
+
+.imageContainer {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50%);
+    }
+}
