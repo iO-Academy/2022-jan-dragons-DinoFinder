@@ -14,7 +14,7 @@ class DinoViewHelper {
     public static function displaySingleDino(DinoEntity $dinos) : string {
 
         $result = '<div class="imageContainer">';
-        $result .= '<img src= "' . $dinos->getImageUrl() . '" alt="An image of a' . $dinos->getSpecies() . '"/>';
+        $result .= '<img src= "' . $dinos->getImageUrl() . '" alt="An image of a ' . $dinos->getSpecies() . '"/>';
         $result .= '</div>';
         $result .= '<h2>' . $dinos->getSpecies() . '</h2>';
         $result .= '<h4>' . $dinos->getDiet() . '</h4>';
