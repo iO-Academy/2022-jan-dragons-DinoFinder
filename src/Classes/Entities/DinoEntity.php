@@ -1,6 +1,6 @@
 <?php
 
-namespace DinoFinder\classes\Entities\DinoEntity;
+namespace DinoFinder\Classes\Entities;
 
 class DinoEntity
 {

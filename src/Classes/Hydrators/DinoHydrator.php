@@ -1,7 +1,7 @@
 <?php
-namespace DinoFinder\classes\Hydrators\DinoHydrator;
+namespace DinoFinder\Classes\Hydrators;
 
-use DinoFinder\classes\Entities\DinoEntity;
+use DinoFinder\Classes\Entities\DinoEntity;
 
 class DinoHydrator {
     public static function getAllDinos(\PDO $db)
