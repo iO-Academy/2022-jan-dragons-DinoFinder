@@ -6,4 +6,3 @@ $id = $_GET['id'];
 $singleDino = \DinoFinder\Classes\Hydrators\DinoHydrator::getDinoByID($db, $id);
 
 
-var_dump($singleDino);

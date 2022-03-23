@@ -27,7 +27,7 @@ class DinoHydrator {
      *
      * @param int $id of selected dinosaur
      *
-     * @return array
+     * @return array containing selected dinosaur info
      */
     public static function getDinoByID(\PDO $db, int $id)
     {
