@@ -62,6 +62,7 @@ class DinoViewHelper {
             $result .= '<img src= "' . $dino->getImageUrl() . '" alt="An image of a ' . $dino->getSpecies() . '"/>';
             $result .= '</div>';
             $result .= '<div class="dietContainer">';
+            $result .= '<h4>' . $dino->getDiet() . '</h4>';
             $result .= '<img src= "assets/image/' . $dino->getFoodImage() . '" alt="An image of a ' . $dino->getDiet() . '"/>';
             $result .= '</div>';
             $result .= '<p>Height: ' . $dino->getHeight() . '</p>';
