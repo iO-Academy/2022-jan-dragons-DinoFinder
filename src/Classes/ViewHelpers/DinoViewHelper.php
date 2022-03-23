@@ -6,11 +6,11 @@ use DinoFinder\Classes\Entities\DinoEntity;
 
 class DinoViewHelper {
     /**
-     * displays a single dinosaur's image, name and diet
+     * displays a single dinosaur's image, name, diet and button to view single dino's details
      *
      * @param DinoEntity $dinos
      *
-     * @return string - concatenated string of dinosaur image, name and diet
+     * @return string - concatenated string of dinosaur image, name, diet and button to view single dino's details
      */
     public static function displaySingleDino(DinoEntity $dinos) : string {
 
