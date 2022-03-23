@@ -14,7 +14,7 @@ class DinoViewHelperTest extends TestCase
         $DinoEntityMock->method('getDiet')->willReturn('lettuce');
 
         $case = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySingleDino($DinoEntityMock);
-        $expected = '<div class="imageContainer"><img src= "image.jpeg" alt="An image of a trex"/></div><h2>trex</h2><h4>lettuce</h4>';
+        $expected = '<div class="dinoCard"><div class="imageContainer"><img src= "image.jpeg" alt="An image of a trex"/></div><h2>trex</h2><h4>lettuce</h4></div>';
         $this->assertEquals($expected, $case);
     }
 
@@ -31,7 +31,7 @@ class DinoViewHelperTest extends TestCase
 		$DinoEntityMock2->method('getDiet')->willReturn('cheese2');
 
 		$case = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displayMultipleDinos([$DinoEntityMock, $DinoEntityMock2]);
-		$expected = '<div class="imageContainer"><img src= "rex.jpeg" alt="An image of a marcusaurusRex"/></div><h2>marcusaurusRex</h2><h4>cheese</h4><div class="imageContainer"><img src= "rex2.jpeg" alt="An image of a marcusaurusRex2"/></div><h2>marcusaurusRex2</h2><h4>cheese2</h4>';
+		$expected = '<div class="dinoCard"><div class="imageContainer"><img src= "rex.jpeg" alt="An image of a marcusaurusRex"/></div><h2>marcusaurusRex</h2><h4>cheese</h4></div><div class="dinoCard"><div class="imageContainer"><img src= "rex2.jpeg" alt="An image of a marcusaurusRex2"/></div><h2>marcusaurusRex2</h2><h4>cheese2</h4></div>';
         $this->assertEquals($expected, $case);
 	}
 
