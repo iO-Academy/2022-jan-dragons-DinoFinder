@@ -51,6 +51,24 @@ class DinoViewHelperTest extends TestCase
 		$this->expectException(TypeError::class);
 		\DinoFinder\Classes\ViewHelpers\DinoViewHelper::displayMultipleDinos([$testArray, $testArray2]);
 	}
+
+    public function testDisplaySoloDinoSuccess(){
+        $DinoEntityMock = $this->createMock(\DinoFinder\Classes\Entities\DinoEntity::class);
+        $DinoEntityMock->method('getSpecies')->willReturn('marcusaurusRex2');
+        $DinoEntityMock->method('getDiet')->willReturn('cheese');
+        $DinoEntityMock->method('getHeight')->willReturn('10.9');
+        $DinoEntityMock->method('getWeight')->willReturn('2000');
+        $DinoEntityMock->method('getLength')->willReturn('22.5');
+        $DinoEntityMock->method('getKillerRating')->willReturn('9');
+        $DinoEntityMock->method('getIntelligence')->willReturn('8');
+        $DinoEntityMock->method('getAge')->willReturn('69');
+        $DinoEntityMock->method('getImageUrl')->willReturn('69');
+        $DinoEntityMock->method('getFoodImage')->willReturn('food.jpg');
+
+        $case = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySingleDinoDetail($DinoEntityMock);
+        $expected = '';
+        $this->assertEquals($expected, $case);
+    }
 }
 
 
