@@ -29,6 +29,9 @@ Navigate into the newly created repo:
 ```
 cd 2022-jan-dragons-DinoFinder
 ```
+From the root of the project run:
+
+    sass --watch style.scss style.css
 
 Install the database ```/dinos.sql``` into a db named ```dinosaurs```
 
@@ -58,4 +61,5 @@ Sami Shanagher - [@Parsley-Afroman](https://github.com/Parsley-Afroman)
 
 With thanks to John Hammond, Dr. Alan Grant, Dr. Ellie Sattler, and all of the good people at **InGen**. Without your tireless research, this project would not have been been possible.
 
+![Ah ah ah, you didn't say the magic word](https://static.wikia.nocookie.net/jurassicpark/images/b/b3/Ahahahreal.gif)
 
