@@ -5,7 +5,7 @@ An adventure 65 million years in the making.
 DinoFinder is the go-to app for finding out about all of your favourite dinosaurs!
 
 ## Description
-DinoFinder is an object-orientated PHP project, styled with SASS, that fetches and displays information, about different dinosaurs, from a MySQL database.
+DinoFinder is an object-orientated PHP project, styled with SASS, that fetches and displays information about different dinosaurs, from a MySQL database.
 
 Upon selecting a dinosaur you are able to view more in-depth facts about the given species with stats such as *'Height'*, *'Length'* and *'Killer Rating'* (Wow!).
 
@@ -34,13 +34,12 @@ Install the database ```/dinos.sql``` into a db named ```dinosaurs```
 
 Ensure your local database host, username and password details are correct in:
 ```
-src/utilities/Db.php
+src/Classes/Utilities/Db.php
 ```
 
-The application will now be available on:
-```
-localhost:8080
-```
+The application will now be available wherever you access your PHP projects!
+
+
 
 
 ## Authors
