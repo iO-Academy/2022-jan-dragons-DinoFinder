@@ -38,17 +38,48 @@ header {
     display: flex;
     flex-wrap: wrap;
     padding: 5%;
-    gap: 30px;
+    row-gap: 40px;
+    column-gap: 30px;
     justify-content: space-evenly;
 
-        .dinoCard {
-            width: 320px;
-            height: 500px;
-            background-color: #FFFFFF;
-            border-radius: 10px;
-            padding: 10px;
+    .dinoCard {
+        width: 320px;
+        height: 500px;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: $body-font;
+        text-align: center;
+        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.8);
+        transition: transform 0.2s;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s;
+        }
+
+        h2 {
+            font-size: 2.5rem;
 
         }
+
+        h4 {
+            font-size: 1.5rem;
+        }
+
+        .dietContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+    }
 }
 
 .imageContainer {
@@ -68,5 +99,15 @@ header {
         top: 50%;
         left: 50%;
         transform: translate( -50%, -50%);
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    header {
+
+        h1 {
+            font-size: 11rem;
+        }
     }
 }
