@@ -30,8 +30,14 @@ Navigate into the newly created repo:
 cd 2022-jan-dragons-DinoFinder
 ```
 From the root of the project run:
+```
+composer install
+```
+and:
+```
+sass --watch style.scss style.css
+```
 
-    sass --watch style.scss style.css
 
 Install the database ```/dinos.sql``` into a db named ```dinosaurs```
 
