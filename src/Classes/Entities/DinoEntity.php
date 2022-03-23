@@ -19,7 +19,7 @@ class DinoEntity
     /** Gets dino ID
      * @return integer - int of ID
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -27,7 +27,7 @@ class DinoEntity
     /** Gets Dino's Species
      * @return string - String of species name
      */
-    public function getSpecies()
+    public function getSpecies(): string
     {
         return $this->species;
     }
@@ -35,7 +35,7 @@ class DinoEntity
     /** Gets Dino's diet
      * @return string - String of diet
      */
-    public function getDiet()
+    public function getDiet(): string
     {
         return $this->diet;
     }
@@ -43,7 +43,7 @@ class DinoEntity
     /** Gets Dino's height
      * @return float - float of height
      */
-    public function getHeight()
+    public function getHeight(): float
     {
         return $this->height;
     }
@@ -51,7 +51,7 @@ class DinoEntity
     /** Gets Dino's weight
      * @return float - float of weight
      */
-    public function getWeight()
+    public function getWeight(): float
     {
         return $this->weight;
     }
@@ -59,7 +59,7 @@ class DinoEntity
     /** Gets Dino's length
      * @return float - float of length
      */
-    public function getLength()
+    public function getLength(): float
     {
         return $this->length;
     }
@@ -67,7 +67,7 @@ class DinoEntity
     /** Gets Dino's Killer Rating
      * @return integer - Int of Killer Rating
      */
-    public function getKillerRating()
+    public function getKillerRating(): int
     {
         return $this->killerRating;
     }
@@ -75,7 +75,7 @@ class DinoEntity
     /** Gets Dino's Intelligence
      * @return integer
      */
-    public function getIntelligence()
+    public function getIntelligence(): int
     {
         return $this->intelligence;
     }
@@ -83,7 +83,7 @@ class DinoEntity
     /** Gets Dino's Age
      * @return integer - Int of age
      */
-    public function getAge()
+    public function getAge(): int
     {
         return $this->age;
     }
@@ -91,7 +91,7 @@ class DinoEntity
     /** Gets Dino's Image
      * @return string - String of image src
      */
-    public function getImageUrl()
+    public function getImageUrl(): string
     {
         return $this->imageUrl;
     }
@@ -99,7 +99,7 @@ class DinoEntity
     /** Gets Dino's food image
      * @return string - string of local image src
      */
-    public function getFoodImage()
+    public function getFoodImage(): string
     {
         return $this->foodImage;
     }

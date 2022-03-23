@@ -9,6 +9,7 @@ class DinoViewHelper {
      * displays a single dinosaur's image, name and diet
      *
      * @param DinoEntity $dinos
+     *
      * @return string - concatenated string of dinosaur image, name and diet
      */
     public static function displaySingleDino(DinoEntity $dinos) : string {
@@ -30,6 +31,7 @@ class DinoViewHelper {
      * displays multiple dinosaur images, names and diets
      *
      * @param array $dinos
+     *
      * @return string - concatenated strings of multiple dinosaur images, names and diets
      */
     public static function displayMultipleDinos(array $dinos) : string {

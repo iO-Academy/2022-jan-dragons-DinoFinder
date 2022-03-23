@@ -24,9 +24,9 @@ $displayDinos = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displayMultipleD
         <header>
             <h1>Dino Finder</h1>
         </header>
-            <section class="dinoGrid">
+        <section class="dinoGrid">
             <?php echo $displayDinos; ?>
-            </section>
+        </section>
 
     </body>
 </html>
