@@ -64,12 +64,12 @@ class DinoViewHelper {
             $result .= '<div class="dietContainer">';
             $result .= '<img src= "assets/image/' . $dino->getFoodImage() . '" alt="An image of a ' . $dino->getDiet() . '"/>';
             $result .= '</div>';
-            $result .= '<p>' . $dino->getHeight() . '</p>';
-            $result .= '<p>' . $dino->getWeight() . '</p>';
-            $result .= '<p>' . $dino->getLength() . '</p>';
-            $result .= '<p>' . $dino->getKillerRating() . '</p>';
-            $result .= '<p>' . $dino->getIntelligence() . '</p>';
-            $result .= '<p>' . $dino->getAge() . '</p>';
+            $result .= '<p>Height: ' . $dino->getHeight() . '</p>';
+            $result .= '<p>Weight: ' . $dino->getWeight() . '</p>';
+            $result .= '<p>Length: ' . $dino->getLength() . '</p>';
+            $result .= '<p>Killer Rating: ' . $dino->getKillerRating() . '</p>';
+            $result .= '<p>Intelligence: ' . $dino->getIntelligence() . '</p>';
+            $result .= '<p>Age: ' . $dino->getAge() . '</p>';
             $result .= '</div>';
             return $result;
     }
