@@ -15,14 +15,18 @@ class DinoViewHelper {
     public static function displaySingleDino(DinoEntity $dinos) : string {
 
         $result = '<div class="dinoCard">';
+        $result .= '<h2>' . $dinos->getSpecies() . '</h2>';
         $result .= '<div class="imageContainer">';
         $result .= '<img src= "' . $dinos->getImageUrl() . '" alt="An image of a ' . $dinos->getSpecies() . '"/>';
         $result .= '</div>';
-        $result .= '<h2>' . $dinos->getSpecies() . '</h2>';
         $result .= '<div class="dietContainer">';
         $result .= '<h4>' . $dinos->getDiet() . '</h4>';
         $result .= '<img src= "assets/image/' . $dinos->getFoodImage() . '" alt="An image of a ' . $dinos->getDiet() . '"/>';
         $result .= '</div>';
+        $result .='<form method="get" action="dinoDetail.php">';
+        $result .='<input type="hidden" name="id" value="' . $dinos->getId() . '"/>';
+        $result .='<button type="submit"> View Dino Details </button>';
+        $result .='</form>';
         $result .= '</div>';
         return $result;
     }
