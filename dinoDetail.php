@@ -5,7 +5,6 @@ $db = \DinoFinder\Classes\Utilities\Db::getConnection();
 $id = $_GET['id'];
 $singleDino = \DinoFinder\Classes\Hydrators\DinoHydrator::getDinoByID($db, $id);
 $singleDinoDetail = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySingleDinoDetails($singleDino);
-
 ?>
 
 <html lang="en">
@@ -24,9 +23,13 @@ $singleDinoDetail = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySingl
 <header>
     <h1>Dino Finder</h1>
 </header>
-<section class="dinoGrid">
-    <?php echo $singleDinoDetail; ?>
-</section>
+<main>
+    <img src="assets/image/DinoPrints.svg" class="dinoFeet" />
+    <section class="detailsCard">
+        <?php echo $singleDinoDetail; ?>
+    </section>
+    <img src="assets/image/DinoPrints.svg" class="dinoFeetR" />
+</main>
 
 </body>
 </html>
