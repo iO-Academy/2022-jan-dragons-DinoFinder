@@ -59,18 +59,25 @@ class DinoViewHelperTest extends TestCase
         $DinoEntityMock = $this->createMock(\DinoFinder\Classes\Entities\DinoEntity::class);
         $DinoEntityMock->method('getSpecies')->willReturn('marcusaurusRex2');
         $DinoEntityMock->method('getDiet')->willReturn('cheese');
-        $DinoEntityMock->method('getHeight')->willReturn('10.9');
-        $DinoEntityMock->method('getWeight')->willReturn('2000');
-        $DinoEntityMock->method('getLength')->willReturn('22.5');
-        $DinoEntityMock->method('getKillerRating')->willReturn('9');
-        $DinoEntityMock->method('getIntelligence')->willReturn('8');
-        $DinoEntityMock->method('getAge')->willReturn('69');
-        $DinoEntityMock->method('getImageUrl')->willReturn('69');
+        $DinoEntityMock->method('getHeight')->willReturn(10.9);
+        $DinoEntityMock->method('getWeight')->willReturn(2000.0);
+        $DinoEntityMock->method('getLength')->willReturn(22.5);
+        $DinoEntityMock->method('getKillerRating')->willReturn(9);
+        $DinoEntityMock->method('getIntelligence')->willReturn(8);
+        $DinoEntityMock->method('getAge')->willReturn(69);
+        $DinoEntityMock->method('getImageUrl')->willReturn('image.jpg');
         $DinoEntityMock->method('getFoodImage')->willReturn('food.jpg');
 
-        $case = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySingleDinoDetail($DinoEntityMock);
-        $expected = '';
+        $case = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySingleDinoDetails($DinoEntityMock);
+        $expected = '<div class="dinoCard"><h2>marcusaurusRex2</h2><div class="imageContainer"><img src= "image.jpg" alt="An image of a marcusaurusRex2"/></div><div class="dietContainer"><h4>cheese</h4><img src= "assets/image/food.jpg" alt="An image of a cheese"/></div><p>Height: 10.9</p><p>Weight: 2000</p><p>Length: 22.5</p><p>Killer Rating: 9</p><p>Intelligence: 8</p><p>Age: 69</p></div>';
         $this->assertEquals($expected, $case);
+    }
+
+    public function testDisplaySoloDinoMalformed(){
+        $testString = 'I am a dino';
+
+        $this->expectException(TypeError::class);
+        \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySingleDinoDetails($testString);
     }
 }
 
