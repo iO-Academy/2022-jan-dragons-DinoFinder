@@ -12,7 +12,7 @@ class DinoViewHelper {
      *
      * @return string - concatenated string of dinosaur image, name and diet
      */
-    public static function displaySingleDino(DinoEntity $dinos) : string {
+    public static function displaySingleDino(DinoEntity $dinos): string {
 
         $result = '<div class="dinoCard">';
         $result .= '<div class="imageContainer">';
@@ -34,11 +34,40 @@ class DinoViewHelper {
      *
      * @return string - concatenated strings of multiple dinosaur images, names and diets
      */
-    public static function displayMultipleDinos(array $dinos) : string {
+    public static function displayMultipleDinos(array $dinos): string {
         $result = '';
         foreach ($dinos as $dino) {
             $result .= self::displaySingleDino($dino);
         }
         return $result;
     }
+
+
+    /**
+     * Displays a single dino with added detail of height, weight, killer rating, intelligence, and age
+     *
+     * @param DinoEntity $dino
+     *
+     * @return string concatenated string of single dinosaur containing information regarding species, diet, an image, and the above-mentioned statistics
+     */
+    public static function displaySingleDinoDetails(DinoEntity $dino): string {
+
+            $result = '<div class="dinoCard">';
+            $result .= '<h2>' . $dino->getSpecies() . '</h2>';
+            $result .= '<div class="imageContainer">';
+            $result .= '<img src= "' . $dino->getImageUrl() . '" alt="An image of a ' . $dino->getSpecies() . '"/>';
+            $result .= '</div>';
+            $result .= '<div class="dietContainer">';
+            $result .= '<img src= "assets/image/' . $dino->getFoodImage() . '" alt="An image of a ' . $dino->getDiet() . '"/>';
+            $result .= '</div>';
+            $result .= '<p>' . $dino->getHeight() . '</p>';
+            $result .= '<p>' . $dino->getWeight() . '</p>';
+            $result .= '<p>' . $dino->getLength() . '</p>';
+            $result .= '<p>' . $dino->getKillerRating() . '</p>';
+            $result .= '<p>' . $dino->getIntelligence() . '</p>';
+            $result .= '<p>' . $dino->getAge() . '</p>';
+            $result .= '</div>';
+            return $result;
+    }
+
 }
