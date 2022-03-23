@@ -17,9 +17,9 @@ class DinoEntity
     private $foodImage;
 
     /** Gets dino ID
-     * @return integer - int of ID
+     * @return string - string containing the ID
      */
-    public function getId(): int
+    public function getId(): string
     {
         return $this->id;
     }
