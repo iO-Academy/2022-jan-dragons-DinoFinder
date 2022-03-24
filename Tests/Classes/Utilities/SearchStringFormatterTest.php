@@ -6,29 +6,27 @@ require_once '../../../vendor/autoload.php';
 
 class SearchStringFormatterTest extends TestCase {
 
-    public function testSearchStringFormatterSuccess()
+    public function testNotTooManyCharSuccess()
     {
-
         $input = 'hello';
-        $case = \DinoFinder\Classes\Utilities\SearchStringFormatter::checkSpecialCharacters($input);
-        $expected = 'hello';
+        $case = \DinoFinder\Classes\Utilities\SearchStringFormatter::notTooManyChar($input);
+        $expected = true;
         $this->assertEquals($expected, $case);
     }
 
-    public function testSearchStringFormatterFailure()
+    public function testNotTooManyCharFailure()
     {
-
-        $input = '123';
-        $case = \DinoFinder\Classes\Utilities\SearchStringFormatter::checkSpecialCharacters($input);
-        $expected = 'Please remove any numbers from your search';
+        $input = '';
+        $case = \DinoFinder\Classes\Utilities\SearchStringFormatter::notTooManyChar($input);
+        $expected = false;
         $this->assertEquals($expected, $case);
     }
 
-    public function testDisplaySingleDinoMalformed()
+    public function testnotTooManyCharMalformed()
     {
         $input = ['i','am', 'an', 'array'];
         $this->expectException(TypeError::class);
-        \DinoFinder\Classes\Utilities\SearchStringFormatter::checkSpecialCharacters($input);
+        \DinoFinder\Classes\Utilities\SearchStringFormatter::notTooManyChar($input);
     }
 }
 
