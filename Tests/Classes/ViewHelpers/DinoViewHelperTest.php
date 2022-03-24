@@ -69,7 +69,7 @@ class DinoViewHelperTest extends TestCase
         $DinoEntityMock->method('getFoodImage')->willReturn('food.jpg');
 
         $case = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySingleDinoDetails($DinoEntityMock);
-        $expected = '<div class="dinoCard"><h2>marcusaurusRex2</h2><div class="imageContainer"><img src= "image.jpg" alt="An image of a marcusaurusRex2"/></div><div class="dietContainer"><h4>cheese</h4><img src= "assets/image/food.jpg" alt="An image of a cheese"/></div><p>Height: 10.9</p><p>Weight: 2000</p><p>Length: 22.5</p><p>Killer Rating: 9</p><p>Intelligence: 8</p><p>Age: 69</p></div>';
+        $expected = '<div class="detailsCard"><h2>marcusaurusRex2</h2><div class="imageContainer"><img src= "image.jpg" alt="An image of a marcusaurusRex2"/></div><div class="dietContainer"><h4>cheese</h4><img src= "assets/image/food.jpg" alt="An image of a cheese"/></div><p>Height: 10.9</p><p>Weight: 2000</p><p>Length: 22.5</p><p>Killer Rating: 9</p><p>Intelligence: 8</p><p>Age: 69</p></div>';
         $this->assertEquals($expected, $case);
     }
 
