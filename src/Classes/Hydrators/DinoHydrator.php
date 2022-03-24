@@ -6,6 +6,20 @@ use DinoFinder\Classes\Entities\DinoEntity;
 class DinoHydrator {
 
     /**
+     * Executes a SQL query against the database and returns the count of items in the dinos table
+     *
+     * @param \PDO $db
+     *
+     * @return array
+     */
+    public static function getDinoCount(\PDO $db): array {
+        $query = $db->prepare('SELECT COUNT(`id`) FROM `dinos`');
+        $query->setFetchMode(\PDO::FETCH_NUM);
+        $query->execute();
+        return $query->fetch();
+    }
+
+    /**
      * Executes an SQL query against the database and fetches all matching entries
      *
      * @param \PDO $db

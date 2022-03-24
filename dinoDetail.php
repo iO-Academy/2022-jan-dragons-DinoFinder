@@ -5,6 +5,9 @@ $db = \DinoFinder\Classes\Utilities\Db::getConnection();
 $id = $_GET['id'];
 $singleDino = \DinoFinder\Classes\Hydrators\DinoHydrator::getDinoByID($db, $id);
 $singleDinoDetail = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySingleDinoDetails($singleDino);
+$dinoCount = \DinoFinder\Classes\Hydrators\DinoHydrator::getDinoCount($db)[0];
+$prev = intval($id) > 1 ?  intval($id) - 1 : 1;
+$next = intval($id) < intval($dinoCount) ? intval($id) + 1 : intval($dinoCount);
 ?>
 
 <html lang="en">
@@ -24,9 +27,9 @@ $singleDinoDetail = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySingl
     <h1>Dino Finder</h1>
 </header>
 <main>
-    <img src="assets/image/DinoPrints.svg" class="dinoFeet flipY" />
+    <a href="?id=<?php echo $prev; ?>"><img src="assets/image/DinoPrints.svg" class="dinoFeet flipY" /></a>
     <?php echo $singleDinoDetail; ?>
-    <img src="assets/image/DinoPrints.svg" class="dinoFeet" />
+    <a href="?id=<?php echo $next; ?>"><img src="assets/image/DinoPrints.svg" class="dinoFeet" /></a>
 </main>
 
 </body>
