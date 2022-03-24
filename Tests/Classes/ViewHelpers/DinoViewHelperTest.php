@@ -79,6 +79,36 @@ class DinoViewHelperTest extends TestCase
         $this->expectException(TypeError::class);
         \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySingleDinoDetails($testString);
     }
+
+    public function testSequentialDinoDisplaySuccess(){
+        $Dino = '<div class="detailsCard"><h2>marcusaurusRex2</h2><div class="imageContainer"><img src= "image.jpg" alt="An image of a marcusaurusRex2"/></div><div class="dietContainer"><h4>cheese</h4><img src= "assets/image/food.jpg" alt="An image of a cheese"/></div><p>Height: 10.9</p><p>Weight: 2000</p><p>Length: 22.5</p><p>Killer Rating: 9</p><p>Intelligence: 8</p><p>Age: 69</p></div>';
+        $id = 1;
+        $dinoCount = 30;
+
+        $case = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySequentialDino($Dino, $id, $dinoCount);
+        $expected = '<a class="dinoFeet" title="Previous Dinosaur"><img src="assets/image/DinoPrints.svg" class="flipY" /></a><div class="detailsCard"><h2>marcusaurusRex2</h2><div class="imageContainer"><img src= "image.jpg" alt="An image of a marcusaurusRex2"/></div><div class="dietContainer"><h4>cheese</h4><img src= "assets/image/food.jpg" alt="An image of a cheese"/></div><p>Height: 10.9</p><p>Weight: 2000</p><p>Length: 22.5</p><p>Killer Rating: 9</p><p>Intelligence: 8</p><p>Age: 69</p></div><a href="?id=2" class="dinoFeet" title="Next Dinosaur"><img src="assets/image/DinoPrints.svg" /><p>Next Dino</p></a>';
+        $this->assertEquals($expected, $case);
+    }
+
+    public function testSequentialDinoDisplayMalformed(){
+
+        $testString = 'string';
+        $id = 'words';
+        $dinoCount = 30;
+        $this->expectException(TypeError::class);
+        \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySequentialDino($testString, $id, $dinoCount);
+
+    }
+
+    public function testSequentialDinoDisplayFailure(){
+
+        $Dino = '<div class="detailsCard"><h2>marcusaurusRex2</h2><div class="imageContainer"><img src= "image.jpg" alt="An image of a marcusaurusRex2"/></div><div class="dietContainer"><h4>cheese</h4><img src= "assets/image/food.jpg" alt="An image of a cheese"/></div><p>Height: 10.9</p><p>Weight: 2000</p><p>Length: 22.5</p><p>Killer Rating: 9</p><p>Intelligence: 8</p><p>Age: 69</p></div>';
+        $id = 60;
+        $dinoCount = 30;
+        $case = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySequentialDino($Dino, $id, $dinoCount);
+        $expected = 'you are out of range';
+        $this->assertEquals($expected, $case);
+    }
 }
 
 

@@ -80,6 +80,23 @@ h3 {
 main {
     display: flex;
     justify-content: space-evenly;
+
+    .dinoFeet {
+        margin-top: 25%;
+        width: 200px;
+        text-decoration: none;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        p {
+            font-family: $body-font;
+            color: #000;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+    }
 }
 
 button {
@@ -239,7 +256,6 @@ button {
     transform: rotateY(180deg);
 }
 
-
 .backLink {
     display: flex;
     align-items: center;
@@ -265,6 +281,10 @@ h3 {
         .imageContainer {
             height: 300px;
         }
+    }
+
+    .dinoFeet {
+        display:none;
     }
 }
 

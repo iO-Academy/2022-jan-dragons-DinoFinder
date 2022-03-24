@@ -69,6 +69,20 @@ main {
   display: flex;
   justify-content: space-evenly;
 }
+main .dinoFeet {
+  margin-top: 25%;
+  width: 200px;
+  text-decoration: none;
+}
+main .dinoFeet:hover {
+  opacity: 0.8;
+}
+main .dinoFeet p {
+  font-family: "DM Sans", sans-serif;
+  color: #000;
+  text-align: center;
+  font-size: 1.8rem;
+}
 
 button {
   border: transparent;
@@ -230,6 +244,10 @@ h3 {
 @media only screen and (max-width: 900px) {
   .detailsCard .imageContainer {
     height: 300px;
+  }
+
+  .dinoFeet {
+    display: none;
   }
 }
 @media only screen and (max-width: 400px) {
