@@ -1,4 +1,9 @@
-$title-font: 'Jurassic Park', sans-serif;
+@font-face {
+    font-family: jurassicFont;
+    src:url("assets/image/JurassicPark.ttf");
+}
+
+$title-font: 'jurassicFont', sans-serif;
 $body-font: 'DM Sans', sans-serif;
 
 * {
