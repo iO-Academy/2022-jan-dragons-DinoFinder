@@ -18,9 +18,10 @@ body {
 header {
 
     display: flex;
+    flex-direction: column;
     width: 100%;
-    justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    gap: 5px;
 
     h1 {
         font-family: $title-font;
@@ -29,8 +30,39 @@ header {
         color: #FFFFFF;
         font-weight: 100;
         text-align: center;
-        margin: 20px;
+        margin: 20px 20px 0 20px;
         white-space: nowrap;
+
+    }
+
+    a {
+        text-decoration: none;
+
+        h1 {
+            &:hover {
+                color: #FFD400;
+            }
+        }
+    }
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    border: transparent;
+    background-color: #3CC001;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    padding: 5px 10px;
+
+    &:hover {
+        background-color: #317400;
+        cursor: pointer;
     }
 }
 
@@ -102,6 +134,103 @@ header {
     }
 }
 
+.detailsCard {
+    font-family: $body-font;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    min-width: 350px;
+    padding: 20px;
+    margin: 40px;
+    background-color: #FFF;
+    border-radius: 20px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.8);
+
+    .imageContainer {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        overflow: hidden;
+        background-color: #DEDEDE;
+        padding: 10px;
+        border-radius: 7px;
+
+        img {
+            position: absolute;
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate( -50%, -50%);
+        }
+    }
+
+    .dietContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 5px;
+        margin: 10px;
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    h2 {
+        font-size: 3.6rem;
+    }
+
+    h4 {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    p {
+        font-size: 2rem;
+        border-style: solid none none none;
+        border-width: 1px;
+        border-color: rgba(0,0,0,0.4);
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        margin: 0;
+    }
+
+
+}
+
+.flipY {
+    transform: rotateY(180deg);
+}
+
+
+.backLink {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    color: #FFFFFF;
+    font-family: $body-font;
+
+    img {
+        width: 32px;
+        margin: 0 10px;
+        transform: rotate(-90deg);
+    }
+}
+@media only screen and (max-width: 900px) {
+    .detailsCard {
+        .imageContainer {
+            height: 300px;
+        }
+    }
+}
+
+
 @media only screen and (max-width: 400px) {
 
     header {
@@ -110,4 +239,11 @@ header {
             font-size: 11rem;
         }
     }
+
+    .detailsCard {
+        h2 {
+            font-size: 3rem;
+        }
+    }
+
 }
