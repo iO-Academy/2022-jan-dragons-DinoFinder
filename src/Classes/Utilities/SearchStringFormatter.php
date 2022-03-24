@@ -19,7 +19,7 @@ class SearchStringFormatter {
      *
      * @param string $string of search input
      *
-     * @return string character verified $string of search input
+     * @return boolean
      */
     public static function notTooManyChar(string $string): bool
     {
