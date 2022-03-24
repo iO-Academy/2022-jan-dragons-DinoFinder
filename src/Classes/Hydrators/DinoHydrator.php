@@ -12,7 +12,7 @@ class DinoHydrator {
      *
      * @return array
      */
-    public static function getDinoCount(\PDO $db): array {
+    public static function getDinoCount(\PDO $db): object {
         $query = $db->prepare('SELECT COUNT(`id`) FROM `dinos`');
         $query->setFetchMode(\PDO::FETCH_NUM);
         $query->execute();
@@ -43,7 +43,7 @@ class DinoHydrator {
      *
      * @return array containing selected dinosaur info
      */
-    public static function getDinoByID(\PDO $db, int $id): array
+    public static function getDinoByID(\PDO $db, int $id): object
     {
         $query = $db->prepare('SELECT `species`,`dinos`.`id`, (`foodTypes`.`name`) AS `diet`, `dinos`.`imageUrl`, (`foodTypes`.`imageUrl`) AS `foodImage`, `height`, `weight`, `killerRating`, `intelligence`, `age`, `length`
     FROM `dinos` LEFT JOIN `foodTypes` ON `foodTypes`.`id` = `dinos`.`foodType` WHERE `dinos`.`id` =' . $id  .';');
