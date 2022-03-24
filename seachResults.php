@@ -28,7 +28,7 @@ $searchResult = $_GET['searchInput'];
     <a href="index.php" class="backLink"><img src="assets/image/DinoFoot.svg" /> Back</a>
 </header>
 <form action="seachResults.php" method="get" class="searchBar">
-    <input type="text" name="searchInput" value="<?php echo $searchResult ?>">
+    <input type="text" name="searchInput" placeholder="Search..." value="<?php echo $searchResult ?>">
     <input type="submit" value="Search" class="searchButton">
 </form>
 <h3>Search Results for "<?php echo $searchResult ?>"</h3>

@@ -25,7 +25,7 @@ $displayDinos = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displayMultipleD
             <h1>Dino Finder</h1>
         </header>
         <form action="seachResults.php" method="get" class="searchBar">
-            <input type="text" name="searchInput">
+            <input type="text" name="searchInput" placeholder="Search...">
             <input type="submit" value="Search" class="searchButton">
         </form>
         <section class="dinoGrid">

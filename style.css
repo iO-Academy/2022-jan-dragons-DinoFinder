@@ -37,7 +37,7 @@ header a h1:hover {
 }
 
 .searchBar {
-  width: 25%;
+  width: 406px;
   height: 40px;
   margin: 20px auto;
   display: flex;
@@ -48,16 +48,18 @@ header a h1:hover {
   margin-left: 10px;
   border: none;
   border-radius: 5px;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-family: "DM Sans", sans-serif;
   padding: 0 5%;
 }
 .searchBar .searchButton {
   width: 20%;
-  font-size: 1.4rem;
-  background-color: #FFFFFF;
+  font-size: 1.6rem;
+  background-color: #3CC001;
   cursor: pointer;
   padding: 0;
+  font-weight: bold;
+  color: #FFFFFF;
 }
 
 h3 {
@@ -239,6 +241,10 @@ h3 {
 
   .detailsCard h2 {
     font-size: 3rem;
+  }
+
+  .searchBar {
+    width: 310px;
   }
 }
 
