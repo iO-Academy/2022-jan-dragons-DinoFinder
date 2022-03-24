@@ -10,10 +10,6 @@ if (!isset($_GET['id'])) {
 $id = $_GET['id'];
 $singleDino = \DinoFinder\Classes\Hydrators\DinoHydrator::getDinoByID($db, $id);
 $singleDinoDetail = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySingleDinoDetails($singleDino);
-$dinoCount = \DinoFinder\Classes\Hydrators\DinoHydrator::getDinoCount($db)[0];
-$prev = intval($id) > 1 ?  intval($id) - 1 : 1;
-$next = intval($id) < intval($dinoCount) ? intval($id) + 1 : intval($dinoCount);
-
 
 ?>
 
@@ -35,9 +31,7 @@ $next = intval($id) < intval($dinoCount) ? intval($id) + 1 : intval($dinoCount);
     <a href="index.php" class="backLink"><img src="assets/image/DinoFoot.svg" /> Back</a>
 </header>
 <main>
-    <a href="?id=<?php echo $prev; ?>" class="dinoFeet" title="Previous Dinosaur"><img src="assets/image/DinoPrints.svg" class="flipY" /><p>Previous Dino</p></a>
     <?php echo $singleDinoDetail; ?>
-    <a href="?id=<?php echo $next; ?>" class="dinoFeet" title="Next Dinosaur"><img src="assets/image/DinoPrints.svg" /><p>Next Dino</p></a>
 </main>
 
 </body>

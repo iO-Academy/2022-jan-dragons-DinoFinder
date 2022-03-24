@@ -22,7 +22,6 @@ header {
     width: 100%;
     align-items: center;
     gap: 5px;
-    //align-items: flex-start;
 
     h1 {
         font-family: $title-font;
@@ -33,7 +32,7 @@ header {
         text-align: center;
         margin: 20px 20px 0 20px;
         white-space: nowrap;
-        
+
     }
 
     a {
@@ -205,23 +204,6 @@ button {
 
 }
 
-.dinoFeet {
-    margin-top: 25%;
-    width: 200px;
-    text-decoration: none;
-
-    &:hover {
-        opacity: 0.8;
-    }
-
-    p {
-        font-family: $body-font;
-        color: #000;
-        text-align: center;
-        font-size: 1.8rem;
-    }
-}
-
 .flipY {
     transform: rotateY(180deg);
 }
@@ -241,10 +223,6 @@ button {
     }
 }
 @media only screen and (max-width: 900px) {
-
-    .dinoFeet {
-        display:none;
-    }
     .detailsCard {
         .imageContainer {
             height: 300px;
