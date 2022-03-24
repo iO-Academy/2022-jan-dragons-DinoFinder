@@ -2,12 +2,19 @@
 
 require_once 'vendor/autoload.php';
 $db = \DinoFinder\Classes\Utilities\Db::getConnection();
+
+if (!isset($_GET['id'])) {
+    header('Location: index.php');
+}
+
 $id = $_GET['id'];
 $singleDino = \DinoFinder\Classes\Hydrators\DinoHydrator::getDinoByID($db, $id);
 $singleDinoDetail = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySingleDinoDetails($singleDino);
 $dinoCount = \DinoFinder\Classes\Hydrators\DinoHydrator::getDinoCount($db)[0];
 $prev = intval($id) > 1 ?  intval($id) - 1 : 1;
 $next = intval($id) < intval($dinoCount) ? intval($id) + 1 : intval($dinoCount);
+
+
 ?>
 
 <html lang="en">
