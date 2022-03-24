@@ -46,6 +46,37 @@ header {
     }
 }
 
+.searchBar {
+    width: 25%;
+    height: 40px;
+    margin: 20px auto;
+    display: flex;
+
+    input {
+        height: 100%;
+        width: 80%;
+        margin-left: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 2rem;
+        font-family: $body-font;
+        padding: 0 5%;
+    }
+
+    .searchButton {
+        width: 20%;
+        font-size: 1.4rem;
+        background-color: #FFFFFF;
+        cursor: pointer;
+        padding: 0;
+    }
+}
+
+h3 {
+    margin: auto;
+    text-align: center;
+}
+
 main {
     display: flex;
     justify-content: space-evenly;
@@ -222,6 +253,13 @@ button {
         transform: rotate(-90deg);
     }
 }
+
+h3 {
+    color: #FFFFFF;
+    font-family: $body-font;
+    font-size: 3rem;
+}
+
 @media only screen and (max-width: 900px) {
     .detailsCard {
         .imageContainer {
