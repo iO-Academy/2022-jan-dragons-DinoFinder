@@ -22,7 +22,7 @@ $displayDinos = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displayMultipleD
 </head>
     <body>
         <header>
-            <h1>Dino Finder</h1>
+            <a href="./index.php"><h1>Dino Finder</h1></a>
         </header>
         <section class="dinoGrid">
             <?php echo $displayDinos; ?>
