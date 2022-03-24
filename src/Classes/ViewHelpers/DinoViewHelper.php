@@ -75,4 +75,37 @@ class DinoViewHelper {
             return $result;
     }
 
+    public static function displaySequentialDino(string $singleDinoDetail, int $id, int $dinoCount) : string
+    {
+        $prev = $id > 1 ?  $id - 1 : 1;
+        $next = $id < $dinoCount ? $id + 1 : $dinoCount;
+
+        $render = '';
+
+        if($id < 0 || $id > $dinoCount){
+            return '<p class="noticeMessage">you are out of range</p>';
+        } else {
+            if ($id > 1) {
+                $render .= '<a href="?id=' . $prev . '" class="dinoFeet" title="Previous Dinosaur">
+                    <img src="assets/image/DinoPrints.svg" class="flipY" /><p>Previous Dino</p></a>';
+                $render .= $singleDinoDetail;
+            } else {
+                $render .= '<a class="dinoFeet" title="Previous Dinosaur">';
+                $render .= '<img src="assets/image/DinoPrints.svg" class="flipY" /></a>';
+                $render .= $singleDinoDetail;
+            }
+
+            if ($id < $dinoCount) {
+                $render .= '<a href="?id=' . $next . '" class="dinoFeet" title="Next Dinosaur">';
+                $render .= '<img src="assets/image/DinoPrints.svg" /><p>Next Dino</p></a>';
+            } else {
+                $render .= '<a class="dinoFeet" title="Next Dinosaur">';
+                $render .= '<img src="assets/image/DinoPrints.svg" /></a>';
+            }
+        }
+        return $render;
+    }
+
+
+
 }
