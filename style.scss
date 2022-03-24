@@ -33,14 +33,17 @@ header {
         text-align: center;
         margin: 20px 20px 0 20px;
         white-space: nowrap;
-
-        &:hover {
-            color: #FFD400;
-        }
+        
     }
 
     a {
         text-decoration: none;
+
+        h1 {
+            &:hover {
+                color: #FFD400;
+            }
+        }
     }
 }
 
