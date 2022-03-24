@@ -24,11 +24,9 @@ $singleDinoDetail = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySingl
     <h1>Dino Finder</h1>
 </header>
 <main>
+    <img src="assets/image/DinoPrints.svg" class="dinoFeet flipY" />
+    <?php echo $singleDinoDetail; ?>
     <img src="assets/image/DinoPrints.svg" class="dinoFeet" />
-    <section class="detailsCard">
-        <?php echo $singleDinoDetail; ?>
-    </section>
-    <img src="assets/image/DinoPrints.svg" class="dinoFeetR" />
 </main>
 
 </body>

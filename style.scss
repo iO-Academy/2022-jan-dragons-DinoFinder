@@ -119,13 +119,6 @@ main {
     border-radius: 20px;
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.8);
 
-    .indivDino {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
     .imageContainer {
         position: relative;
         width: 100%;
@@ -187,21 +180,11 @@ main {
 }
 
 .dinoFeet {
+    width: 200px;
+}
+
+.flipY {
     transform: rotateY(180deg);
-    width: 200px;
-}
-
-.dinoFeetR {
-    width: 200px;
-}
-
-.nextBtn {
-    background: url("assets/image/DinoPrints.svg") no-repeat center;
-    background-size: contain;
-    width: 300px;
-    height: 400px;
-    border: none;
-    cursor: pointer;
 }
 
 
