@@ -2,15 +2,6 @@
 
 require_once 'vendor/autoload.php';
 
-$searchInput = 'pachy';
-$sanitisedString = \DinoFinder\Classes\Utilities\SearchStringFormatter::checkSpecialCharacters($searchInput);
-//$displaySearchedResults = '';
-if (\DinoFinder\Classes\Utilities\SearchStringFormatter::notTooManyChar($sanitisedString)) {
-    $db = \DinoFinder\Classes\Utilities\Db::getConnection();
-    $searchedResults = \DinoFinder\Classes\Hydrators\DinoHydrator::getSearchResults($db, $sanitisedString);
-    $displaySearchedResults = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displayMultipleDinos($searchedResults);
-}
-
 $db = \DinoFinder\Classes\Utilities\Db::getConnection();
 $dinos = \DinoFinder\Classes\Hydrators\DinoHydrator::getAllDinos($db);
 $displayDinos = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displayMultipleDinos($dinos);
@@ -36,7 +27,7 @@ $searchResult = $_GET['searchInput'];
     <a href="./index.php"><h1>Dino Finder</h1></a>
     <a href="index.php" class="backLink"><img src="assets/image/DinoFoot.svg" /> Back</a>
 </header>
-<form action="searchResults.php" method="get" class="searchBar">
+<form action="seachResults.php" method="get" class="searchBar">
     <input type="text" name="searchInput" placeholder="Search..." value="<?php echo $searchResult ?>">
     <input type="submit" value="Search" class="searchButton">
 </form>
