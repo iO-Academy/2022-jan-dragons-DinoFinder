@@ -2,20 +2,24 @@
 
 require_once 'vendor/autoload.php';
 
-$searchInput = 'pachy';
+if (!isset($_GET['searchInput'])) {
+    header('Location: index.php');
+}
+
+$displaySearchedResults = '';
+$searchInput = $_GET['searchInput'];
 $sanitisedString = \DinoFinder\Classes\Utilities\SearchStringFormatter::checkSpecialCharacters($searchInput);
-//$displaySearchedResults = '';
+
 if (\DinoFinder\Classes\Utilities\SearchStringFormatter::notTooManyChar($sanitisedString)) {
     $db = \DinoFinder\Classes\Utilities\Db::getConnection();
     $searchedResults = \DinoFinder\Classes\Hydrators\DinoHydrator::getSearchResults($db, $sanitisedString);
-    $displaySearchedResults = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displayMultipleDinos($searchedResults);
+    if (count($searchedResults) === 0) {
+        $displaySearchedResults = '<h2 class="noticeMessage">Sorry, no results found.</h2>';
+    } else {
+
+        $displaySearchedResults = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displayMultipleDinos($searchedResults);
+    }
 }
-
-$db = \DinoFinder\Classes\Utilities\Db::getConnection();
-$dinos = \DinoFinder\Classes\Hydrators\DinoHydrator::getAllDinos($db);
-$displayDinos = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displayMultipleDinos($dinos);
-
-$searchResult = $_GET['searchInput'];
 
 ?>
 
@@ -37,12 +41,12 @@ $searchResult = $_GET['searchInput'];
     <a href="index.php" class="backLink"><img src="assets/image/DinoFoot.svg" /> Back</a>
 </header>
 <form action="searchResults.php" method="get" class="searchBar">
-    <input type="text" name="searchInput" placeholder="Search..." value="<?php echo $searchResult ?>">
+    <input type="text" name="searchInput" placeholder="Search..." required maxlength="255" value="<?php echo $sanitisedString ?>">
     <input type="submit" value="Search" class="searchButton">
 </form>
-<h3>Search Results for "<?php echo $searchResult ?>"</h3>
+<h3>Search Results for "<?php echo $sanitisedString ?>"</h3>
 <section class="dinoGrid">
-    <?php echo $displayDinos; ?>
+    <?php echo $displaySearchedResults; ?>
 </section>
 
 </body>
