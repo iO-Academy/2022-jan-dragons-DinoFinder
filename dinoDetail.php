@@ -2,8 +2,10 @@
 
 require_once 'vendor/autoload.php';
 $db = \DinoFinder\Classes\Utilities\Db::getConnection();
+$dinoCount = \DinoFinder\Classes\Hydrators\DinoHydrator::getDinoCount($db)[0];
 
-if (!isset($_GET['id'])) {
+
+if (!isset($_GET['id']) || ($_GET['id'] < 1 || $_GET['id'] > intval($dinoCount))) {
     header('Location: index.php');
 }
 
