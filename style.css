@@ -60,6 +60,7 @@ header a h1:hover {
   padding: 0;
   font-weight: bold;
   color: #FFFFFF;
+  border: #FFFFFF solid 2px;
 }
 
 h3 {
@@ -245,6 +246,13 @@ h3 {
 
   .searchBar {
     width: 310px;
+  }
+  .searchBar .searchButton {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
   }
 }
 
