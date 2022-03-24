@@ -25,11 +25,12 @@ $next = intval($id) < intval($dinoCount) ? intval($id) + 1 : intval($dinoCount);
 <body>
 <header>
     <a href="./index.php"><h1>Dino Finder</h1></a>
+    <a href="index.php" class="backLink"><img src="assets/image/DinoFoot.svg" /> Back</a>
 </header>
 <main>
-    <a href="?id=<?php echo $prev; ?>" class="dinoFeet flipY" title="Previous Dinosaur"><img src="assets/image/DinoPrints.svg" /></a>
+    <a href="?id=<?php echo $prev; ?>" class="dinoFeet" title="Previous Dinosaur"><img src="assets/image/DinoPrints.svg" class="flipY" /><p>Previous Dino</p></a>
     <?php echo $singleDinoDetail; ?>
-    <a href="?id=<?php echo $next; ?>" class="dinoFeet" title="Next Dinosaur"><img src="assets/image/DinoPrints.svg" /></a>
+    <a href="?id=<?php echo $next; ?>" class="dinoFeet" title="Next Dinosaur"><img src="assets/image/DinoPrints.svg" /><p>Next Dino</p></a>
 </main>
 
 </body>
