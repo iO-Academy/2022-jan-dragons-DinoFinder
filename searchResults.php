@@ -38,7 +38,7 @@ if (\DinoFinder\Classes\Utilities\SearchStringFormatter::notTooManyChar($sanitis
 <body>
 <header>
     <a href="./index.php"><h1>Dino Finder</h1></a>
-    <a href="index.php" class="backLink"><img src="assets/image/DinoFoot.svg" /> Back</a>
+    <a href="index.php" class="backLink"><img src="assets/image/DinoFoot.svg" /> Clear Search</a>
 </header>
 <form action="searchResults.php" method="get" class="searchBar">
     <input type="text" name="searchInput" placeholder="Search..." required maxlength="255" value="<?php echo $sanitisedString ?>">

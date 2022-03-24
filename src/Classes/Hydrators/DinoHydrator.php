@@ -64,7 +64,8 @@ class DinoHydrator {
     public static function getSearchResults(\PDO $db, string $search): array
     {
         $searchTerm = '%' . $search . '%';
-        $query = $db->prepare("SELECT `dinos`.`species`,`dinos`.`id`, (`foodTypes`.`name`) AS `diet`, `dinos`.`imageUrl`, (`foodTypes`.`imageUrl`) AS `foodImage` FROM `dinos` LEFT JOIN `foodTypes` ON `foodTypes`.`id` = `dinos`.`foodType` WHERE `dinos`.`species` LIKE '$searchTerm';");
+        $query = $db->prepare("SELECT `dinos`.`species`,`dinos`.`id`, (`foodTypes`.`name`) AS `diet`, `dinos`.`imageUrl`, (`foodTypes`.`imageUrl`) AS `foodImage` FROM `dinos` LEFT JOIN `foodTypes` ON `foodTypes`.`id` = `dinos`.`foodType` WHERE `dinos`.`species` LIKE :search;");
+        $query->bindParam(':search', $searchTerm);
         $query->setFetchMode(\PDO::FETCH_CLASS, DinoEntity::class);
         $query->execute();
         return $query->fetchAll();
