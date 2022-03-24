@@ -106,7 +106,7 @@ class DinoViewHelperTest extends TestCase
         $id = 60;
         $dinoCount = 30;
         $case = \DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySequentialDino($Dino, $id, $dinoCount);
-        $expected = 'you are out of range';
+        $expected = '<p class="noticeMessage">you are out of range</p>';
         $this->assertEquals($expected, $case);
     }
 }

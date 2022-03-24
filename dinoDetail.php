@@ -34,8 +34,7 @@ $dinoCount = \DinoFinder\Classes\Hydrators\DinoHydrator::getDinoCount($db)[0];
     <a href="index.php" class="backLink"><img src="assets/image/DinoFoot.svg" /> Back</a>
 </header>
 <main>
-<?php echo DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySequentialDino($singleDinoDetail, $id, $dinoCount);?>
-
+    <?php echo DinoFinder\Classes\ViewHelpers\DinoViewHelper::displaySequentialDino($singleDinoDetail, $id, intval($dinoCount));?>
 </main>
 
 </body>

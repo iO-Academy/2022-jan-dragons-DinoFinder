@@ -77,13 +77,13 @@ class DinoViewHelper {
 
     public static function displaySequentialDino(string $singleDinoDetail, int $id, int $dinoCount) : string
     {
-        $prev = intval($id) > 1 ?  intval($id) - 1 : 1;
-        $next = intval($id) < intval($dinoCount) ? intval($id) + 1 : intval($dinoCount);
+        $prev = $id > 1 ?  $id - 1 : 1;
+        $next = $id < $dinoCount ? $id + 1 : $dinoCount;
 
         $render = '';
 
         if($id < 0 || $id > $dinoCount){
-            return 'you are out of range';
+            return '<p class="noticeMessage">you are out of range</p>';
         } else {
             if ($id > 1) {
                 $render .= '<a href="?id=' . $prev . '" class="dinoFeet" title="Previous Dinosaur">
