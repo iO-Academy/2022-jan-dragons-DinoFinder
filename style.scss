@@ -46,6 +46,52 @@ header {
     }
 }
 
+.searchBar {
+    width: 406px;
+    height: 40px;
+    margin: 20px auto;
+    display: flex;
+
+    input {
+        height: 100%;
+        width: 80%;
+        margin-left: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.6rem;
+        font-family: $body-font;
+        padding: 0 5%;
+    }
+
+    .searchButton {
+        width: 20%;
+        font-size: 1.6rem;
+        background-color: #3CC001;
+        cursor: pointer;
+        padding: 0;
+        font-weight: bold;
+        color: #FFFFFF;
+        border: #FFFFFF solid 2px;
+
+        &:hover {
+            background-color: #317400;
+            cursor: pointer;
+        }
+    }
+}
+
+
+h3 {
+    margin: auto;
+    text-align: center;
+}
+
+.noticeMessage {
+    font-family: $body-font;
+    font-size: 3rem;
+    color: white;
+}
+
 main {
     display: flex;
     justify-content: space-evenly;
@@ -222,10 +268,21 @@ button {
         transform: rotate(-90deg);
     }
 }
+
+h3 {
+    color: #FFFFFF;
+    font-family: $body-font;
+    font-size: 3rem;
+}
+
 @media only screen and (max-width: 900px) {
     .detailsCard {
         .imageContainer {
             height: 300px;
+        }
+
+        h2 {
+            font-size: 3rem;
         }
     }
 }
@@ -240,10 +297,18 @@ button {
         }
     }
 
-    .detailsCard {
-        h2 {
-            font-size: 3rem;
+    .searchBar {
+        width: 310px;
+
+        .searchButton {
+            font-size: 1.4rem;
+
         }
+
+
     }
 
+    h3 {
+        font-size: 2.4rem;
+    }
 }
