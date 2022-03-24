@@ -1,5 +1,5 @@
 .DS_Store
 .idea
 /vendor
-.css
-.css.map
+style.css
+style.css.map
