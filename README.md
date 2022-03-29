@@ -4,6 +4,7 @@ An adventure 65 million years in the making.
 
 DinoFinder is the go-to app for finding out about all of your favourite dinosaurs!
 
+
 ## Description
 DinoFinder is an object-orientated PHP project, styled with SASS, that fetches and displays information about different dinosaurs, from a MySQL database.
 
@@ -48,19 +49,26 @@ src/Classes/Utilities/Db.php
 
 The application will now be available wherever you access your PHP projects!
 
-
-
-
 ## Authors
 
 Ethan Garrett - [@EthanGarrett](https://github.com/ethan-garrett)
+
 Gabriel Rowan - [@GabrielRowan](https://github.com/gabrielrowan)
+
 Grace Palacz - [@Grace-P-03](https://github.com/grace-p-03)
+
 Jordan Addis - [@J-Add](https://github.com/j-add)
+
 Luke Grayland - [@Luke-Grayland](https://github.com/luke-grayland)
+
 Marcus Drury - [@Marcus12934](https://github.com/Marcus12934)
+
 Sami Shanagher - [@Parsley-Afroman](https://github.com/Parsley-Afroman)
 
+## Links
+Live App - <https://dev.io-academy.uk/projects/2022-jan/dino-finder/>
+
+GitHub Repo - <https://github.com/iO-Academy/2022-jan-dragons-DinoFinder/>
 
 
 ## Acknowledgements
